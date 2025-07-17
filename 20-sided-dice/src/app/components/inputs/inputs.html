@@ -1,0 +1,47 @@
+<form [formGroup]="dice" (ngSubmit)="rollADie()">
+    <div class="container">
+        <div>
+            <label for="qty">Quantity of dice:
+                <input class="custom-input" type="number" formControlName="qty" name="qty" min="1" max="4"
+                    required="true" (focus)="this.showDiceWarning=true" (blur)="this.showDiceWarning=false">
+
+            </label>
+            <br>
+            <div class="error-container">
+                @if(showDiceWarning){
+                <div class="warning">
+                    <span>Deve conter entre 1 e 4 dados</span>
+                </div>
+
+                }
+                @if(dice.get('qty')?.invalid){
+                <span class="error">{{error}}</span>
+                }
+            </div>
+        </div>
+
+        <div>
+            <label for="sides">Number of Sides:
+                <input class="custom-input" type="number" formControlName="sides" name="sides" min="6" max="20"
+                    required="true" (focus)="showSidesWarning=true" (blur)="showSidesWarning=false">
+            </label>
+            <br>
+            <div class="error-container">
+                @if(showSidesWarning){
+                <div class="warning">
+                    <span>Deve conter entre 6 a 20 lados</span>
+                </div>
+                }
+                @if(dice.get('sides')?.invalid){
+                <span class="error">{{error}}</span>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="div-button">
+        <button type="submit" class="custom-button">Roll</button>
+    </div>
+</form>
+<div class="dice">
+    <app-dice [quantity]="quantity" [sides]="sides"></app-dice>
+</div>

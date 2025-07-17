@@ -1,0 +1,28 @@
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(154, 0, 0);;
+    color: white;
+    z-index: 1000;
+    height: 60px;
+    align-items: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(154, 0, 0);
+    color: white;
+    z-index: 1000;
+    height: 60px;
+    align-items: center;
+}
+
